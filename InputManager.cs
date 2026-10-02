@@ -6,13 +6,11 @@ using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField]
-    private Camera sceneCamera;
+    [SerializeField] private Camera sceneCamera;
 
     private Vector3 lastPosition;
 
-    [SerializeField]
-    private LayerMask placementLayermask;
+    [SerializeField] private LayerMask placementLayermask;
 
     public event Action OnClicked, OnExit;
 
@@ -33,8 +31,10 @@ public class InputManager : MonoBehaviour
         mousePos.z = sceneCamera.nearClipPlane;
         Ray ray = sceneCamera.ScreenPointToRay(mousePos);
         RaycastHit hit;
+        Debug.DrawRay(sceneCamera.transform.position, mousePos);
         if (Physics.Raycast(ray, out hit, 100, placementLayermask))
         {
+            
             lastPosition = hit.point;
         }
         return lastPosition;

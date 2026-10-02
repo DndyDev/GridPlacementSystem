@@ -35,7 +35,7 @@ public class GridData
         return returnVal;
     }
 
-    public bool CanPlaceObejctAt(Vector3Int gridPosition, Vector2Int objectSize)
+    public bool CanPlaceObjectAt(Vector3Int gridPosition, Vector2Int objectSize)
     {
         List<Vector3Int> positionToOccupy = CalculatePositions(gridPosition, objectSize);
         foreach (var pos in positionToOccupy)
@@ -59,19 +59,5 @@ public class GridData
         {
             placedObjects.Remove(pos);
         }
-    }
-}
-
-public class PlacementData
-{
-    public List<Vector3Int> occupiedPositions;
-    public int ID { get; private set; }
-    public int PlacedObjectIndex { get; private set; }
-
-    public PlacementData(List<Vector3Int> occupiedPositions, int iD, int placedObjectIndex)
-    {
-        this.occupiedPositions = occupiedPositions;
-        ID = iD;
-        PlacedObjectIndex = placedObjectIndex;
     }
 }

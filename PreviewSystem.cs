@@ -3,24 +3,22 @@ using UnityEngine;
 
 public class PreviewSystem : MonoBehaviour
 {
-    [SerializeField]
-    private float previewYOffset = 0.06f;
+    [SerializeField] private float previewYOffset = 0.06f;
 
-    [SerializeField]
-    private GameObject cellIndicator;
-    private GameObject previewObject;
+    [SerializeField] private GameObject cellIndicator;
 
-    [SerializeField]
-    private Material previewMaterialPrefab;
+    [SerializeField] private Material previewMaterialPrefab;
+
     private Material previewMaterialInstance;
-
+    private GameObject previewObject;
     private Renderer cellIndicatorRenderer;
+
 
     private void Start()
     {
         previewMaterialInstance = new Material(previewMaterialPrefab);
         cellIndicator.SetActive(false);
-        cellIndicatorRenderer = cellIndicator.GetComponentInChildren<Renderer>();
+        cellIndicatorRenderer = cellIndicator.GetComponent<Renderer>();//GetComponentInChildren<Renderer>();
     }
 
     public void StartShowingPlacementPreview(GameObject prefab, Vector2Int size)

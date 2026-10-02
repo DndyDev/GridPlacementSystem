@@ -9,7 +9,7 @@ public class PlacementState : IBuildingState
     int ID;
     Grid grid;
     PreviewSystem previewSystem;
-    ObjectsDatabaseSO database;
+    ObjectsDatabase database;
     GridData floorData;
     GridData furnitureData;
     ObjectPlacer objectPlacer;
@@ -18,7 +18,7 @@ public class PlacementState : IBuildingState
     public PlacementState(int iD,
                           Grid grid,
                           PreviewSystem previewSystem,
-                          ObjectsDatabaseSO database,
+                          ObjectsDatabase database,
                           GridData floorData,
                           GridData furnitureData,
                           ObjectPlacer objectPlacer,
@@ -80,7 +80,7 @@ public class PlacementState : IBuildingState
             floorData :
             furnitureData;
 
-        return selectedData.CanPlaceObejctAt(gridPosition, database.objectsData[selectedObjectIndex].Size);
+        return selectedData.CanPlaceObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size);
     }
 
     public void UpdateState(Vector3Int gridPosition)

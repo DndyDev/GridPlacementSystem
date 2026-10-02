@@ -6,36 +6,27 @@ using UnityEngine;
 
 public class PlacementSystem : MonoBehaviour
 {
-    [SerializeField]
-    private InputManager inputManager;
-    [SerializeField]
-    private Grid grid;
+    [SerializeField] private InputManager inputManager;
 
-    [SerializeField]
-    private ObjectsDatabaseSO database;
+    [SerializeField] private Grid grid;
 
-    [SerializeField]
-    private GameObject gridVisualization;
+    [SerializeField] private ObjectsDatabase database;
 
-    [SerializeField]
-    private AudioClip correctPlacementClip, wrongPlacementClip;
-    [SerializeField]
-    private AudioSource source;
+    [SerializeField] private GameObject gridVisualization;
+
+    [SerializeField] private AudioClip correctPlacementClip, wrongPlacementClip;
+
+    [SerializeField] private AudioSource source;
+
+    [SerializeField] private PreviewSystem preview;
+
+    [SerializeField] private ObjectPlacer objectPlacer;
+
+    [SerializeField] private SoundFeedback soundFeedback;
 
     private GridData floorData, furnitureData;
-
-    [SerializeField]
-    private PreviewSystem preview;
-
     private Vector3Int lastDetectedPosition = Vector3Int.zero;
-
-    [SerializeField]
-    private ObjectPlacer objectPlacer;
-
     IBuildingState buildingState;
-
-    [SerializeField]
-    private SoundFeedback soundFeedback;
 
     private void Start()
     {
