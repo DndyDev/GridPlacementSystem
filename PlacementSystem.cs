@@ -33,6 +33,14 @@ public class PlacementSystem : MonoBehaviour
         gridVisualization.SetActive(false);
         floorData = new();
         furnitureData = new();
+
+        InitGridVisualization();
+
+    }
+
+    private void InitGridVisualization()
+    {
+        
     }
 
     public void StartPlacement(int ID)
